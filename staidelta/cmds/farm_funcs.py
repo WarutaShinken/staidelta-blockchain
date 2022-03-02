@@ -301,7 +301,7 @@ async def summary(
                 if staking_detail >= 2:
                     # query balance
                     balance = await get_ph_balance(rpc_port, k)
-                    balance /= Decimal(10 ** 12)
+                    balance /= Decimal(10 ** 9)
                 if staking_detail == 1:
                     print(f"  {ph}")
                 elif staking_detail == 2:
