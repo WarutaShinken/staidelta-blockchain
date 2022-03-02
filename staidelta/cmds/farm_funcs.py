@@ -292,7 +292,6 @@ async def summary(
         print(format_bytes(PlotStats.total_plot_size))
 
         if staking_detail >= 0 and staking_detail <= 3:
-            print("Staking addresses:")
             if staking_detail > 0:
                 print("Staking addresses:")
             address_prefix = config["network_overrides"]["config"][config["selected_network"]]["address_prefix"]
