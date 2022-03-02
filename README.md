@@ -32,7 +32,7 @@ For details on farmed rewards and fees you should run 'sit start wallet' and 'si
 For number of coins staked per address you should run 'sit farm summary -sd 2'
 ```
 
-Additionally, `-sd 3` shows staking addresses for keys without plots that are accessible to the system you're running it on. This is useful if you want to stake with coins from a cold wallet.
+Additionally, it shows staking addresses for keys without plots that are accessible to the system you're running it on. This is useful if you want to stake with coins from a cold wallet.
 
 ### Install (linux)
 Use `git clone https://github.com/WarutaShinken/staidelta-blockchain -b staking-detail-mod-1` to clone the repo to your machine and then run `sh install.sh` as usual.
