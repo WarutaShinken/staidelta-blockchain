@@ -1,6 +1,7 @@
 # StaiDelta Performance Mods
 
 - Exposed the following update intervals in `config.yaml`:
+  - `UPDATE_POOL_INFO_INTERVAL`
   - `UPDATE_POOL_FARMER_INFO_INTERVAL`
   - `UPDATE_HARVESTER_CACHE_INTERVAL`
 - Added dynamic staking summary mod:
