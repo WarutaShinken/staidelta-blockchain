@@ -7,8 +7,10 @@
 - Added dynamic staking summary mod:
   - Caches staking addresses when using `-sa`/`--staking-addresses` with `farm summary`.
   - Shows the cached info when running `farm summary` without `-sa`.
+  - Shows key fingerprints for each staking address when fetching from keys.
   - Staking balances are shown with `-sb`/`--staking-balance` and uses cached addresses.
     - The cache is updated before the staking balances are calculated when using both `-sa` and `-sb`, meaning that combining both options will show up to date staking balances (assuming a fully synced node).
+- Optimised the code that extracts the staking addresses from the plots.
 
 <p id="station"></p>
 <h2>STAIDELTA - FOOD, WATER AND ELECTRICITY - WORLDWIDE</h2>
