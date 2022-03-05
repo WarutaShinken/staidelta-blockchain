@@ -99,7 +99,7 @@ def summary_cmd(
     from .farm_funcs import summary
     import asyncio
 
-    asyncio.run(summary(rpc_port, wallet_rpc_port, harvester_rpc_port, farmer_rpc_port))
+    asyncio.run(summary(rpc_port, wallet_rpc_port, harvester_rpc_port, farmer_rpc_port, staking_addresses, staking_balance))
 
 
 @farm_cmd.command("challenges", short_help="Show the latest challenges")
