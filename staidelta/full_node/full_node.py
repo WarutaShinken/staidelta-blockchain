@@ -1309,6 +1309,7 @@ class FullNode:
             msg = make_msg(ProtocolMessageTypes.new_transaction, new_tx)
             await self.server.send_to_all([msg], NodeType.FULL_NODE)
 
+        timelord_reward_puzzle_hash: bytes32 = self.constants.TIMELORD_PUZZLE_HASH
         # If there were pending end of slots that happen after this peak, broadcast them if they are added
         if fns_peak_result.added_eos is not None:
             broadcast = full_node_protocol.NewSignagePointOrEndOfSubSlot(
@@ -1316,6 +1317,7 @@ class FullNode:
                 fns_peak_result.added_eos.challenge_chain.get_hash(),
                 uint8(0),
                 fns_peak_result.added_eos.reward_chain.end_of_slot_vdf.challenge,
+                timelord_reward_puzzle_hash
             )
             msg = make_msg(ProtocolMessageTypes.new_signage_point_or_end_of_sub_slot, broadcast)
             await self.server.send_to_all([msg], NodeType.FULL_NODE)
