@@ -19,8 +19,8 @@ from staidelta.util.default_root import DEFAULT_ROOT_PATH
 from staidelta.util.ints import uint16, uint64
 from staidelta.util.misc import format_bytes, format_minutes
 from staidelta.util.network import is_localhost
-from chia.util.keychain import Keychain
-from chia.wallet.derive_keys import master_sk_to_farmer_sk
+from staidelta.util.keychain import Keychain
+from staidelta.wallet.derive_keys import master_sk_to_farmer_sk
 
 SECONDS_PER_BLOCK = (24 * 3600) / 4608
 
