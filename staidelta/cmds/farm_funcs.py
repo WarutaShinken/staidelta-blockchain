@@ -390,7 +390,7 @@ async def summary(
                 if get_staking_balances:
                     # query balance
                     balance = await get_ph_balance(rpc_port, ph)
-                    balance /= Decimal(10 ** 12)
+                    balance /= Decimal(10 ** 9)
                     print(f"    Balance: {balance} TSTAI")
     else:
         print("Plot count: Unknown")
