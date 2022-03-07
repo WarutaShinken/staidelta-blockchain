@@ -778,7 +778,7 @@ class PoolWallet:
             else:
                 prev_height = 0
             farmer_coeff: str = str(blockchain.get_farmer_difficulty_coeff_sync(
-                block.farmer_public_key, prev_height - 1 if prev_height - 1 > 0 else 0
+                block.farmer_public_key, block.height if block.height > 0 else 0
             ))
             absorb_spend: List[CoinSpend] = create_absorb_spend(
                 last_solution,

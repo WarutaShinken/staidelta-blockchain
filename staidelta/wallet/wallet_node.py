@@ -443,6 +443,7 @@ class WalletNode:
         if res is None or not isinstance(res, farmer_protocol.FarmerStakings):
             raise ValueError("Peer returned no response")
         self.wallet_state_manager.blockchain.stakings.update({bytes(k): Decimal(v) for k, v in res.stakings})
+        self.wallet_state_manager.blockchain.coeff_at_height[bytes(res.stakings[0])][height]=Decimal(res.stakings[1])
 
     async def complete_blocks(self, header_blocks: List[HeaderBlock], peer: WSStaiDeltaConnection):
         if self.wallet_state_manager is None:
