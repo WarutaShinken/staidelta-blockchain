@@ -82,7 +82,8 @@ class WalletBlockchain(BlockchainInterface):
     lock: asyncio.Lock
     log: logging.Logger
 
-    stakings: Dict[bytes, uint64] = {}
+    stakings: Dict[bytes, Decimal] = {}
+    coeff_at_height: Dict[bytes, Dict[uint32,Decimal]] = {} # for farmer pk, height, then coeff
 
     @staticmethod
     async def create(
@@ -559,4 +560,9 @@ class WalletBlockchain(BlockchainInterface):
     async def get_farmer_difficulty_coeff(
         self, farmer_public_key: G1Element, height: Optional[uint32] = None
     ) -> Decimal:
+        if height is not None:
+            farmer_dict = self.coeff_at_height.get(bytes(farmer_public_key), Decimal(20))
+            if isinstance(farmer_dict, Decimal):
+                return farmer_dict
+            return farmer_dict.get(height, Decimal(20))
         return self.stakings.get(bytes(farmer_public_key), Decimal(20))

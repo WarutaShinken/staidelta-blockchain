@@ -34,8 +34,8 @@ export default function FarmCardBlockRewards() {
     <FarmCard
       title={<Trans>{currencyCode} Block Rewards</Trans>}
       description={<Trans>Without fees</Trans>}
-      value={<Trans>Soon</Trans>}
-      //value={blockRewards}
+      //value={<Trans>Soon</Trans>}
+      value={blockRewards}
       loading={loading}
     />
   );
