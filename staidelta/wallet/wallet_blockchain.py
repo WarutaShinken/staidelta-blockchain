@@ -561,7 +561,7 @@ class WalletBlockchain(BlockchainInterface):
         self, farmer_public_key: G1Element, height: Optional[uint32] = None
     ) -> Decimal:
         if height is not None:
-            farmer_dict = self.coeff_at_height.get(farmer_public_key, Decimal(20))
+            farmer_dict = self.coeff_at_height.get(bytes(farmer_public_key), Decimal(20))
             if isinstance(farmer_dict, Decimal):
                 return farmer_dict
             return farmer_dict.get(height, Decimal(20))
